@@ -100,8 +100,8 @@ class Game extends React.Component {
 	
 	const moves = history.map((step, move) => {
       const desc = move ?
-        'Go to move #' + move :
-        'Go to game start';
+        'चाल पर जाए #' + move :
+        'शुरू करें';
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -112,10 +112,10 @@ class Game extends React.Component {
     let status;
 	let varia;
     if (winner) {
-      status = 'Winner: ' + winner;
+      status = 'विजेता: ' + winner;
 	  varia = <Confetti width={1200} height={1000} recycle={false} wind={0.05}/>
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'अगला खिलाड़ी: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 	
     return (
